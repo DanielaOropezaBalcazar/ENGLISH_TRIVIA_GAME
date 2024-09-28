@@ -84,7 +84,6 @@ h2 {
     padding: 5px;
     border-radius: 1rem;
     overflow: visible;
-    background: #f7ba2b;
     background: var(--background);
     position: relative;
     z-index: 1;
@@ -93,7 +92,6 @@ h2 {
 .card::after {
     position: absolute;
     content: "";
-    top: 30px;
     left: 0;
     right: 0;
     z-index: -1;
@@ -101,7 +99,6 @@ h2 {
     width: 100%;
     transform: scale(0.8);
     filter: blur(50px);
-    background: #f7ba2b;
     background: var(--background);
     transition: opacity .5s;
 }
@@ -126,14 +123,14 @@ h2 {
     opacity: 0;
 }
 .card:hover .card-info {
-    color: #f7ba2b;
+    color: #ffffff;
     transition: color 1s;
 }
 
 .card3 {
     width: 99%;
     height: 70px;
-    background: #07182E;
+    background: #332436;
     position: relative;
     display: flex;
     place-content: center;
@@ -151,8 +148,7 @@ h2 {
     content: '';
     position: absolute;
     width: 635%;
-    /*background-image: linear-gradient(180deg, #5e0d0d, #ff4fe2);*/ /* OG */
-    background-image: linear-gradient(180deg, #00b809, #1d00ab, #ff00d4);
+    background-image: linear-gradient(180deg, #00b809, #0089ab, #ff00b7);
     height: 635%;
     animation: rotBGimg 2.8s linear infinite;
     transition: all 0.2s linear;
@@ -167,15 +163,15 @@ h2 {
 .card3::after {
     content: '';
     position: absolute;
-    background: #001531;
-    inset: 7px;
+    background: #3b0049;
+    inset: 10px;
     outline-style: dashed;
     border-radius: 15px;
 }
 .card3:hover:before {
-    /*background-image: linear-gradient(180deg, #00159a, #51ff71);*/ /* OG */
-    background-image: linear-gradient(180deg, #1d00ab, #00b809, #fffb00);
+    background-image: linear-gradient(180deg, #1d00ab, #00b87e, #fffb00);
     animation: rotBGimg 2.8s linear infinite;
+    transition: all 0.2s linear;
 }
 
 
