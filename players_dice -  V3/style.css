@@ -1,11 +1,11 @@
 /* Estilo para los nombres de los jugadores p */
 .active-turn1 {
-    color: #fe080a; /* Jugador 1 */
+    color: #dd00f5; /* Jugador 1 */
     text-decoration: antiquewhite;
     font-weight: bold;
 }
 .active-turn2 {
-    color: #a1fe00; /* Jugador 2 */
+    color: #0083F5; /* Jugador 2 */
     text-decoration: antiquewhite;
     font-weight: bold;
 }
@@ -38,17 +38,17 @@ h2 {
 }
 .scoreboard {
     width: 25%; 
-    margin-left: 2%; 
+    margin-left: 2.5%; 
     padding: 10px;
     box-sizing: border-box;
     margin-top: -30px;
 }
 
 .card1 {
-    --background: linear-gradient(to left, #f7ba2b 0%, #ff2121 100%);
+    --background: linear-gradient(to left, #1eff00 0%, #dd00f5 100%);
 }
 .card2 {
-    --background: linear-gradient(to left, #f7ba2b 0%, #3ddc19 100%);
+    --background: linear-gradient(to left, #f6ff00 0%, #0083F5 100%);
 }
 .card {
     width: 96%;
@@ -88,7 +88,6 @@ h2 {
     height: 100%;
     overflow: visible;
     border-radius: .7rem;
-
 }
 .card .title {
     font-weight: bold;
@@ -124,7 +123,8 @@ h2 {
     content: '';
     position: absolute;
     width: 635%;
-    background-image: linear-gradient(180deg, #5e0d0d, #ff4fe2);
+    /*background-image: linear-gradient(180deg, #5e0d0d, #ff4fe2);*/ /* OG */
+    background-image: linear-gradient(180deg, #0f005b, #ff00d4);
     height: 635%;
     animation: rotBGimg 2.8s linear infinite;
     transition: all 0.2s linear;
@@ -135,16 +135,18 @@ h2 {
     } to {
     transform: rotate(360deg);
     }
-}/*
+}
 .card3::after {
     content: '';
     position: absolute;
-    background: #011c3f;
-    inset: 5px;
+    background: #001531;
+    inset: 7px;
+    outline-style: dashed;
     border-radius: 15px;
-} */ 
+} 
 .card3:hover:before {
-    background-image: linear-gradient(180deg, #00159a, #51ff71);
+    /*background-image: linear-gradient(180deg, #00159a, #51ff71);*/ /* OG */
+    background-image: linear-gradient(180deg, #00421e, #fffb00);
     animation: rotBGimg 2.8s linear infinite;
 }
 
@@ -177,8 +179,8 @@ h2 {
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    background: #feffd5;
-    border: #322763 1px solid;
+    background: #f4e5ff;
+    border: #741a95 1px solid;
     border-radius: 5%;
 }
 
@@ -213,10 +215,10 @@ h2 {
 }
 
 .dot {
-    height: 25px;
-    width: 25px;
+    height: 29px;
+    width: 29px;
     /*background-color: #322763;*/
-    background-image: linear-gradient(45deg, #ff00bb, #0f296a);
+    background-image: linear-gradient(-45deg, #0377be, #00ff33, #eeff00);
     border-radius: 50%;
     justify-self: center;
     align-self: center;
@@ -356,7 +358,7 @@ h2 {
     justify-content: center;
     align-items: center;
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     color: #221c3c;
     text-align: center;
     padding: 10px;
@@ -384,20 +386,23 @@ h2 {
     /*background: linear-gradient(to top, #049e66, #5ffff4);*/
     background: #4fff1f;
     font-weight: bold;
+    color: #e4fffb;
     /*border: 5px outset #1c3c2e;*/
 }
 .casilla.nivel2 {
     /*background: linear-gradient(to top, #0d4f97, #a1ceff);*/
-    background: #55ffe2;
+    background: #21ffda;
     font-weight: bold;
+    color: #ff0073;
     /*border: 5px outset #221c3c;*/
 }
 .casilla.nivel1 {
     /*background: linear-gradient(to top, #ff20da, #ffaff0);*/
     background: #ff0073;
     font-weight: bold;
+    color: #4fff1f;
     /*border: 5px outset #3c1c38;*/
-    color: #55ffe2;
+
 }
 
 /* Para posicionar las fichas en el tablero */
@@ -409,20 +414,16 @@ h2 {
     transform: translate(-50%, -50%); /* Ajuste de posición al centro */
 }
 .player1 {
-    background-color: red;
+    background-color: #dd00f5;
+    border: 3.2px solid #1eff00;
     left: 23%; /* Centrado horizontal */
     top: 23%;  /* Centrado vertical */
 }
 .player2 {
-    background-color: #a1fe00;
+    background-color: #0083F5;
+    border: 3.2px solid #f6ff00;
     left: 77%; /* Centrado horizontal */
     top: 77%;  /* Centrado vertical */
 }
-
-
-
-
-
-
 
 
