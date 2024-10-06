@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('Images/fondo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* PARA EL FONDO CON PATRON (cambiar gama de colores en c1 c2 y c3)*/
+.container {
+    width: 100%;
+    height: 100%;
+    --s: 194px;
+    /* control the size */
+    --c2: #07003d;
+    --c1: #2d3b74;
+
+    --_l: #0000 calc(25% / 3), var(--c1) 0 25%, #0000 0;
+    --_g: conic-gradient(from 120deg at 50% 87.5%, var(--c1) 120deg, #0000 0);
+
+    background: var(--_g), var(--_g) 0 calc(var(--s) / 2),
+        conic-gradient(from 180deg at 75%, var(--c2) 60deg, #0000 0),
+        conic-gradient(from 60deg at 75% 75%, var(--c1) 0 60deg, #0000 0),
+        linear-gradient(150deg, var(--_l)) 0 calc(var(--s) / 2),
+        conic-gradient(at 25% 25%,
+            #0000 50%,
+            var(--c2) 0 240deg,
+            var(--c1) 0 300deg,
+            var(--c2) 0),
+        linear-gradient(-150deg, var(--_l)) #515fff
+        /*c3*/
+        /* third color here */
+    ;
+    background-size: calc(0.866 * var(--s)) var(--s);
+}
+
+.game-container {
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+h1 {
+    font-size: 75px;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 500;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+button {
+    color: #5eff00;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    width: 300px;
+    font-family: "Akshar", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 45px;
+    background-color: black;
+    border: 3px solid #5eff00;
+    box-shadow: -5px 5px 0px 0px #5eff00;
+    transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s;
+}
+
+button:hover {
+    color: black;
+    background-color: #5eff00;
+    transform: translate(6px, -6px);
+    border: 3px solid black;
+    box-shadow: -5px 5px 0px 0px black;
+
+}
+
+.icons-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 30px;
+}
+
+.settings-icon,
+.info-icon {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.card {
+    width: 50%;
+    height: 100px;
+    background: #00000084;
+    border: 3px solid #618f9e;
+    color: #00d9ff;
+    box-shadow: 12px 17px 51px #000000b7;
+    backdrop-filter: blur(6px);
+    border-radius: 19px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:active {
+    transform: scale(0.95) rotateZ(1.9deg);
+}
+
+

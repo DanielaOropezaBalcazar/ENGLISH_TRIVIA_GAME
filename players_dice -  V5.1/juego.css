@@ -1,0 +1,518 @@
+/* fondo de toda la pantalla*/
+.container {
+    width: 99%;
+    height: 100%;
+    --s: 220px;
+    /* control the size */
+    /*--c1: #1d1d1d;
+    --c2: #4e4f51;
+    --c3: #3c3c3c;*/
+
+    --c3: #2a2558;
+    --c2: #2a3957;
+    --c1: #111339;
+
+
+    background: repeating-conic-gradient(from 30deg,
+            #0000 0 120deg,
+            var(--c3) 0 180deg) calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+        repeating-conic-gradient(from 30deg,
+            var(--c1) 0 60deg,
+            var(--c2) 0 120deg,
+            var(--c3) 0 180deg);
+    background-size: var(--s) calc(var(--s) * 0.577);
+}
+
+/* Estilo para los nombres de los jugadores p */
+.active-turn1 {
+    color: #dd00f5;
+    /* Jugador 1 */
+    text-decoration: antiquewhite;
+    font-weight: bold;
+}
+
+.active-turn2 {
+    color: #0088ff;
+    /* Jugador 2 */
+    text-decoration: antiquewhite;
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    color: #feffd5;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 10px;
+    text-align: center;
+    padding: 12px;
+    /*      margin-bottom: 10px;
+    background-color: #221c3c;
+    border-left: 4px solid #00aa88;*/
+    border-radius: 5px;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /*background: linear-gradient(to right, #008268, #9f00a2);*/
+    color: transparent;
+    padding: 5px 0;
+    /*border-bottom: 4px solid #00aa88;*/
+    border-radius: 5px;
+}
+
+.scoreboard {
+    width: 25%;
+    margin-left: 2.5%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: -30px;
+}
+
+.card1 {
+    --background: linear-gradient(to left, #1eff00 0%, #dd00f5 100%);
+}
+
+.card2 {
+    --background: linear-gradient(to left, #f6ff00 0%, #0083F5 100%);
+}
+
+.card {
+    width: 96%;
+    height: 50px;
+    padding: 5px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+    margin-top: 30px;
+}
+
+.card::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 50%;
+    width: 100%;
+    transform: scale(0.8);
+    filter: blur(50px);
+    background: var(--background);
+    transition: opacity .5s;
+}
+
+.card-info {
+    --color: #000242ae;
+    background: var(--color);
+    color: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    border-radius: .7rem;
+}
+
+.card .title {
+    font-weight: bold;
+    letter-spacing: .1em;
+}
+
+/*Hover*/
+.card:hover::after {
+    opacity: 0;
+}
+
+.card:hover .card-info {
+    color: #ffffff;
+    transition: color 1s;
+}
+
+.card3 {
+    width: 99%;
+    height: 70px;
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+
+.card3 p {
+    z-index: 1;
+    font-size: 165%;
+    line-height: 100%;
+}
+
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card3::before {
+    content: '';
+    position: absolute;
+    width: 635%;
+    background-image: linear-gradient(180deg, #00b809, #0089ab, #ff00b7);
+    height: 635%;
+    animation: rotBGimg 2.8s linear infinite;
+    transition: all 0.2s linear;
+}
+
+.card3::after {
+    content: '';
+    position: absolute;
+    background: #3a0049d9;
+    inset: 10px;
+    outline-style: dashed;
+    border-radius: 15px;
+}
+
+.card3:hover:before {
+    background-image: linear-gradient(180deg, #1d00ab, #00b87e, #fffb00);
+    animation: rotBGimg 2.8s linear infinite;
+    transition: all 0.2s linear;
+}
+
+/* DADO */
+
+.container_dado {
+    width: 200px;
+    height: 200px;
+    margin-left: 9%;
+    position: relative;
+    perspective: 800px;
+    top: -350px;
+    cursor: pointer;
+}
+
+.cube {
+    transform: translateY(400px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.cube-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background: #c0e0ff;
+    border: #515fff 1px solid;
+    border-radius: 5%;
+}
+
+.front {
+    transform: translateZ(100px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+.inside {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
+}
+
+.dot {
+    height: 29px;
+    width: 29px;
+    background-color: #5160ff;
+    /*background-image: linear-gradient(-45deg, #0377be, #00ff33);*/
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+}
+
+.front .inside .dot {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.back .inside .dot:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.back .inside .dot:nth-child(2) {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.back .inside .dot:nth-child(3) {
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.back .inside .dot:nth-child(4) {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.back .inside .dot:nth-child(5) {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.back .inside .dot:nth-child(6) {
+    grid-row: 3;
+    grid-column: 3;
+}
+
+.left .inside .dot:nth-child(1) {
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.left .inside .dot:nth-child(2) {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.left .inside .dot:nth-child(3) {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.right .inside .dot:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.right .inside .dot:nth-child(2) {
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.right .inside .dot:nth-child(3) {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.right .inside .dot:nth-child(4) {
+    grid-row: 3;
+    grid-column: 3;
+}
+
+.top .inside .dot:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.top .inside .dot:nth-child(2) {
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.top .inside .dot:nth-child(3) {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.top .inside .dot:nth-child(4) {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+.top .inside .dot:nth-child(5) {
+    grid-row: 3;
+    grid-column: 3;
+}
+
+.bottom .inside .dot:nth-child(1) {
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.bottom .inside .dot:nth-child(2) {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+
+/* TABLERO */
+
+.tablero-container {
+    position: absolute;
+    top: 30%;
+    left: 33%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(6, 80px);
+    grid-template-rows: repeat(6, 80px);
+    gap: 8px;
+}
+
+.casilla {
+    /*linear-gradient(to bottom, #a50595, #059d60);
+    border: 2px solid #221c3c;*/
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color: #221c3c;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    /* Añadido para posicionar las fichas*/
+    width: 50px;
+    height: 50px;
+}
+
+/* Colores de las casillas */
+.casilla.inicio {
+    /*background: linear-gradient(to top, #2b2256, #6a6198);*/
+    background: #d4fe2a;
+    font-weight: bold;
+    color: #415000;
+    font-size: 16px;
+    /*border: 5px outset #221c3c;*/
+}
+
+.casilla.final {
+    /*background: linear-gradient(to top, #ff3d1b, #ffafaf);*/
+    background: #ff3d1b;
+    font-weight: bold;
+    color: #fed4d4;
+    font-size: 16px;
+    /*border: 5px outset #3c1c1c;*/
+}
+
+.casilla.nivel3 {
+    /*background: linear-gradient(to top, #049e66, #5ffff4);*/
+    background: #00fe2a;
+    font-weight: bold;
+    color: #d4faff;
+    /*border: 5px outset #1c3c2e;*/
+}
+
+.casilla.nivel2 {
+    /*background: linear-gradient(to top, #0d4f97, #a1ceff);*/
+    background: #00ffd5;
+    font-weight: bold;
+    color: #ff0073;
+    /*border: 5px outset #221c3c;*/
+}
+
+.casilla.nivel1 {
+    /*background: linear-gradient(to top, #ff20da, #ffaff0);*/
+    background: #ff0073;
+    font-weight: bold;
+    color: #00fe2a;
+    /*border: 5px outset #3c1c38;*/
+
+}
+
+/* Para posicionar las fichas en el tablero */
+.token {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    /* Posición absoluta dentro de la casilla */
+    transform: translate(-50%, -50%);
+    /* Ajuste de posición al centro */
+}
+
+.player1 {
+    background-color: #dd00f5;
+    border: 3.2px solid #1eff00;
+    left: 23%;
+    /* Centrado horizontal */
+    top: 23%;
+    /* Centrado vertical */
+}
+
+.player2 {
+    background-color: #0083F5;
+    border: 3.2px solid #f6ff00;
+    left: 77%;
+    /* Centrado horizontal */
+    top: 77%;
+    /* Centrado vertical */
+}
+
+
+/* PARA EL BOTON DE REINICIAR LA PARTIDA */
+/* From Uiverse.io by Mike11jr */
+.rest-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.restart-btn {
+    font-family: "Akshar", sans-serif;
+    width: 130px;
+    height: 40px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #01032b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 15px;
+    transition: all .4s;
+}
+
+.restart-btn:hover {
+    border-radius: 5px;
+    transform: translateY(-10px);
+    box-shadow: 0 7px 0 -2px magenta,
+        0 15px 0 -4px #54db39,
+        0 16px 10px -3px #39a2db;
+}
+
+.restart-btn:active {
+    transition: all 0.2s;
+    border-radius: 5px;
+    transform: translateY(-5px);
+    box-shadow: 0 2px 0 -2px magenta,
+        0 8px 0 -4px #54db39,
+        0 12px 10px -3px #39a2db;
+}
