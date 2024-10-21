@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Go on & win</title>
+    <link rel="stylesheet" href="juego.css">
+</head>
+
+<body class="container">
+    <!-- Contadores para los dos jugadores -->
+    <div class="scoreboard">
+        <!-- Jugador 1 -->
+        <div class="card1">
+            <div class="card">
+                <div class="card-info">
+                    <h2 id="player1Name">PLAYER 1</h2>
+                </div>
+            </div>
+        </div>
+        <div class="card3">
+            <p>Score: <span id="scoreP1">0</span></p>
+            <!-- <p>Dice: <span id="currentRollP1">0</span></p> -->
+            <!-- <p>Box: <span id="totalSumP1">0</span></p> -->
+        </div>
+        <!-- Jugador 2 -->
+        <div>
+            <div class="card2">
+                <div class="card">
+                    <div class="card-info">
+                        <h2 id="player2Name">PLAYER 2</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card3">
+                <p>Score: <span id="scoreP2">0</span></p>
+                <!-- <p>Dice: <span id="currentRollP2">0</span></p> -->
+                <!-- <p>Box: <span id="totalSumP2">0</span></p> -->
+            </div>
+        </div>
+    </div><div class="title">SERIOUS MODE</div>
+    <!-- Contenedor del tablero -->
+    <div class="tablero-container">
+        <div class="tablero" id="tablero"></div>
+    </div>
+
+
+    <!-- Contenedor de Preguntas -->
+    <div class="question-container" id="question-container">
+        <div class="question" id="question"></div>
+        <div class="options" id="options"></div> <br/>
+        <div class="options" id="options"></div> <br/> 
+        <div class="options" id="options"></div>
+    </div>
+
+
+
+    <!-- Contenedor del boton de reinicio y salida -->
+    <div class="rest-button-container">
+        <a href="Juego.html">
+            <button class="restart-btn">RESET</button>
+        </a>
+        <br/><br/><br/>
+        <a href="Index.html">
+            <button class="restart-btn">MENU</button>
+        </a>
+    </div>
+    <!-- Contenedor del dado -->
+    <div class="container_dado">
+        <div class="cube">
+            <div class="cube-face front">
+                <div class="inside">
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <div class="cube-face back">
+                <div class="inside">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <div class="cube-face left">
+                <div class="inside">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <div class="cube-face right">
+                <div class="inside">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <div class="cube-face top">
+                <div class="inside">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <div class="cube-face bottom">
+                <div class="inside">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    </div>
+</body>
+
+</html>
